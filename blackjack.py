@@ -85,17 +85,21 @@ def play_blackjack():
       dealer_hand = [deck.pop(), deck.pop()]
   
       # Print initial hands
-      print("Player's hand: ", player_hand)
-      print("Dealer's hand: ", dealer_hand[0], "and a hidden card")
+      print("\nPlayer's hand: ", player_hand)
+      print("\nDealer's hand: ", dealer_hand[0], "and a hidden card")
   
       # Player's turn
       while True:
-          choice = input("Do you want to hit or stand? ")
+          choice = input("\nDo you want to hit or stand? \n")
           if choice.lower() == 'hit':
               player_hand.append(deck.pop())
               print("Player's hand: ", player_hand)
+              if calculate_hand(player_hand) == 21: 
+                print("\nBLACKJACK!!!!!")
+                return 
               if calculate_hand(player_hand) > 21:
-                  print("You bust! You lose.")
+                  print("\nYou bust! You lose.")
+                  play_again()
                   return
           elif choice.lower() == 'stand':
               break
@@ -106,19 +110,26 @@ def play_blackjack():
       while calculate_hand(dealer_hand) < 17:
           dealer_hand.append(deck.pop())
       print("Dealer's hand: ", dealer_hand)
+
+      while calculate_hand(dealer_hand) > 21:
+        print('\nDealer Busted, You Win!')
+        return
+      while calculate_hand(dealer_hand) == 21:
+        print('\nDealer Blackjack!!!! You lost.')
+        return
   
       # Determine the winner
       player_total = calculate_hand(player_hand)
       dealer_total = calculate_hand(dealer_hand)
       
       if player_total > dealer_total:
-          print("You win!")
+          print("\nYou win!")
           play_again()
       elif player_total < dealer_total:
-          print("You lose.")
+          print("\nYou lose.")
           play_again()
       else:
-          print("It's a tie.")
+          print("\nIt's a tie.")
           play_again()
   else: 
     print('Goodbye')
