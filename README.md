@@ -1,4 +1,5 @@
 # Blackjack
 
-shitty code
-just something I was forced to do for my cs class
+I made it for my CS class
+
+\nNot really worth my time
