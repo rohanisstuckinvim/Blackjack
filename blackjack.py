@@ -2,22 +2,7 @@
 import random
 
 # List of card values
-card_values = {
-  'Ace': 1,
-  '2': 2,
-  '3': 3,
-  '4': 4,
-  '5': 5,
-  '6': 6,
-  '7': 7,
-  '8': 8,
-  '9': 9,
-  '10': 10,
-  'Jack': 10,
-  'Queen': 10,
-  'King': 10
-}
-
+card_values = {'Ace': 1,'2': 2,'3': 3,'4': 4,'5': 5,'6': 6,'7': 7,'8': 8,'9': 9,'10': 10,'Jack': 10,'Queen': 10,'King': 10}
 
 # function to calculate the total value of a player's hand
 def calculate_hand(hand):
