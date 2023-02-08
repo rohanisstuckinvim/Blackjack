@@ -75,7 +75,7 @@ def play_again():
       play_again()
       return
     while calculate_hand(dealer_hand) == 21:
-      print('\nDealer Blackjack!!!! You lost.')
+      print('\nDealer got Blackjack!!!! You lost.')
       play_again()
       return
 
